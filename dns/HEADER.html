@@ -1,0 +1,34 @@
+<h2>DNS bits and pieces</h2>
+
+<p>This is a collection of various bits of open source C code that implement parts of the <a
+href="http://www.dns.net/dnsrd/rfc/">DNS protocol</a> (<a
+href="http://www.crynwr.com/rfc1035/rfc1035.html">rfc 1035</a>), <a
+href="http://www.faqs.org/rfcs/rfc2782.html">SRV</a> records, <a href="http://www.multicastdns.org/">Multicast
+DNS</a>,  and <a href="http://www.dns-sd.org/">Service Discovery</a> (aka dns-sd, or Apple's <a
+href="http://developer.apple.com/macosx/rendezvous/">Rendezvous</a>). Unless otherwise noted in the file,
+the license is GPL, jabber me at jer@jabber.org to request any other licensing terms if needed.</p>
+
+<dl>
+<dt><em><tt>tinysrv.c</tt></em></dt>
+<dd>A very basic/rudimentary SRV/A resolver with no dependencies (on libresolv, libc, anything, straight C).  
+Mostly for educational use.</dd>
+<dt><em><tt>demosrv.c</tt></em></dt>
+<dd>Uses tinysrv.c as a command line resolver, testing tool.</dd>
+<dt><em><tt>socket.c</tt></em></dt>
+<dd>Few basic TCP/UDP socket routines, used by demosrv.c.</dd>
+<dt><em><tt>1035.c/1035.h</tt></em></dt>
+<dd>A very minimal implementation of RFC 1035 Messages, both
+parsing/decoding and generation.  Creates a simple struct and is
+entirely self-contained. Handles en/decoding numerous RR data types
+(A, PTR, CNAME, SRV, etc) as well.</dd>
+<dt><em><tt>ichat.c/ichat.h</tt></em></dt>
+<dd>Some utility functions to process/create Apple's iChat TXT
+data (soon to be depreciated in favour of normal DNS-SD TXT
+records).</dd>
+<dt><em><tt>mcast.c</tt></em></dt>
+<dd>A bunch of notes and code bits on dealing w/ multicast and
+particularly system interfaces, a mess to say the least.</dd>
+<dt><em><tt></tt></em></dt>
+<dd></dd>
+</dl>
+

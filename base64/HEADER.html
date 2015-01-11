@@ -1,0 +1,12 @@
+<h2>A Collection of C Base64 Decoders</h2>
+
+<p>Below is five different implementations of base64 decoding in C.  I ended up collecting these over
+the course of a few hours late one night when hunting down a bug in my base64 decoder, having to do with line 
+endings.  The bug was that the encoded data was in multiple lines, and each line had to be treated as a 
+seperate block to decode, whereas all of the decoders would treat them as one continuous block and end up
+corrupting the data after the first line.</p>
+<p>In hacking them into my debug code, I changed them all to have binary safe semantics and put the result
+back in the string that was passed, returning the length of that decoded block.  I only modified the first
+one to handle the line endings properly.  I make no claims over this code, there are some notes in each file
+and all of them have their own copyrights/licenses that you can find by searching <a 
+href="http://google.com/">Google</a> (where I found them) using the right keywords from their source.</p>
